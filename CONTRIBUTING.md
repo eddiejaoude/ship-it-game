@@ -6,7 +6,7 @@ By taking part you agree to follow the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Getting started
 
-There is no build step and no dependencies.
+The game has no build step and no runtime dependencies. Node.js is only needed to run the tests.
 
 1. Fork the repo and clone your fork
 2. Create a branch: `git checkout -b my-change`
@@ -14,6 +14,16 @@ There is no build step and no dependencies.
 4. Make your change and refresh the page
 
 `window.SHIPIT` exposes the game state in the browser console, which is handy for testing (for example jumping straight to the boss).
+
+### Running the tests
+
+CI runs a [Playwright](https://playwright.dev) smoke test on every pull request. It loads the game on desktop and mobile Chrome, starts a run and fails on any JavaScript error. To run it locally (needs Node.js and Python 3):
+
+```sh
+npm install
+npx playwright install chromium
+npm test
+```
 
 ## Where things live
 
@@ -36,7 +46,7 @@ Everything is in `index.html`. Near the top of the script:
 
 - Keep each PR focused on one change
 - Keep the game dependency-free and in a single file unless an issue agrees otherwise
-- Test on desktop (mouse and keyboard) and, if you can, on a phone (touch)
+- Test on desktop (mouse and keyboard) and, if you can, on a phone (touch). `npm test` must pass
 - For visual changes, add a screenshot or short clip to the PR
 - Link the issue your PR closes (`Closes #123`)
 
