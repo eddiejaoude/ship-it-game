@@ -17,7 +17,7 @@ The game has no build step and no runtime dependencies. Node.js is only needed t
 
 ### Running the tests
 
-CI runs a [Playwright](https://playwright.dev) smoke test on every pull request. It loads the game on desktop and mobile Chrome, starts a run and fails on any JavaScript error. Once a PR is merged, the same test runs on `main` and, if it passes, `index.html` is deployed to GitHub Pages. To run it locally (needs Node.js and Python 3):
+CI runs a [Playwright](https://playwright.dev) smoke test on every pull request. It loads the game on desktop and mobile Chrome, starts a run and fails on any JavaScript error. Once a PR is merged, the same test runs on `main` and, if it passes, `index.html` and `assets/og-image.jpg` are deployed to GitHub Pages. To run it locally (needs Node.js and Python 3):
 
 ```sh
 npm install

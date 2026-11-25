@@ -49,6 +49,7 @@ Open `index.html` and look near the top of the script:
 - `CONFIG.repoUrl` shows a "Star on GitHub" link in the bottom-right corner and on the win screen when set
 - `CONFIG.shareUrl` is the URL used in the "Ask for more levels" share post
 - `CONFIG.creator` sets the "Made by" credit and social links in the bottom-left corner (`github`, `substack`, `x`, `linkedin`, `youtube`). Set it to `null` to hide it
+- The `og:*` and `twitter:*` meta tags in `<head>` control link previews. `assets/og-image.jpg` is the 1200×630 share image. The URLs must be absolute, so point them at your own site when forking
 - `FEATURES`, `IDEAS`, `BOSS_LINES`, `BG_TXT` hold all the jokes. PRs with better ones welcome
 - `LEVELS` and `buildLevel()` define level length, speed and enemy patterns
 - `UPGRADES` defines the level-up cards
