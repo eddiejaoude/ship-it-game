@@ -64,7 +64,7 @@
   .soon div small{display:block;color:var(--muted);font-weight:600}
   .lock{float:right}
   .tag{display:inline-block;font:800 11px var(--mono);padding:4px 8px;border-radius:999px;background:rgba(255,210,63,.15);color:var(--gold);letter-spacing:1px}
-  .corner{position:fixed;bottom:max(10px,env(safe-area-inset-bottom));z-index:11;transition:opacity .25s,visibility .25s}
+  .corner{position:fixed;bottom:max(10px,env(safe-area-inset-bottom));z-index:11}
   #social{left:max(10px,env(safe-area-inset-left));display:flex;flex-wrap:wrap;align-items:center;gap:6px}
   #social .by{font:700 11px var(--mono);color:var(--muted);margin-right:2px;white-space:nowrap}
   #social a{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;color:var(--ink);background:rgba(8,16,13,.75);
@@ -76,8 +76,6 @@
     border:1px solid rgba(255,210,63,.45);backdrop-filter:blur(6px);transition:border-color .12s,transform .12s,box-shadow .12s}
   #star:hover,#star:focus-visible{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 0 14px rgba(255,210,63,.3)}
   #star[hidden]{display:none}
-  /* Out of the way while playing: no distraction and no accidental taps while dragging */
-  body[data-state="play"] .corner,body[data-state="dying"] .corner{opacity:0;visibility:hidden}
   /* Keep menu panels clear of the corner row */
   #ov{padding-bottom:64px}
   /* Phones: label above the icons so both corners fit; very small screens drop the label */
@@ -106,9 +104,9 @@
 
 // ---- Config you may want to change when forking ------------------------------
 const CONFIG = {
-  repoUrl: 'https://github.com/eddiejaoude/ship-it-game',   // "Star on GitHub" in the corner on menu screens + win screen ('' to hide)
+  repoUrl: 'https://github.com/eddiejaoude/ship-it-game',   // "Star on GitHub" in the corner + on the win screen ('' to hide)
   shareUrl: 'https://eddiejaoude.github.io/ship-it-game/',  // URL included in share posts ('' = current page URL)
-  // Creator credit + social links in the bottom-left corner (hidden during play).
+  // Creator credit + social links in the bottom-left corner (always visible).
   // Remove entries or set creator to null to hide. Available icons: see SOCIAL_ICONS.
   creator: {
     name: 'Eddie Jaoude',
@@ -359,7 +357,7 @@ function banner(big,text,sub,dur=2.4){ G.banner={big,text,sub,t:0,dur}; }
 function shake(a){ G.shake=Math.max(G.shake,a); }
 
 // ---- Flow --------------------------------------------------------------------
-function setState(s){ G.state=s; document.body.dataset.state=s; }
+function setState(s){ G.state=s; }
 function newRun(){
   Object.assign(S,{x:0,tx:0,n:3,fireRate:1,dmg:1,pierce:0,spread:0,magnet:1,fireT:0,xp:0,lvl:1,hurt:0,picks:{},peak:1});
   G.stats={bugs:0,tickets:0,ideas:0,pings:0,tokens:0,time:0}; G.bossSnap=null; S.peak=3;
@@ -828,7 +826,7 @@ function drawHUD(){
     ctx.fillStyle=hg; rr(x,y,Math.max(0.001,w*clamp(b.hp/b.max,0,1)),12,6); ctx.fill(); }
   // hint
   if(G.state==='play' && G.level===1 && G.dist<70){ ctx.globalAlpha=0.6+0.4*Math.sin(G.t*5); ctx.textAlign='center'; ctx.font=`800 ${Math.min(16,W*0.04)}px ${F()}`; ctx.fillStyle='#fff';
-    ctx.fillText(isTouch?'◀  drag to move  ▶   ·   you shoot automatically':'◀  move with mouse or arrow keys  ▶   ·   you shoot automatically',cx,H-18); ctx.globalAlpha=1; }
+    ctx.fillText(isTouch?'◀  drag to move  ▶   ·   you shoot automatically':'◀  move with mouse or arrow keys  ▶   ·   you shoot automatically',cx,H-72); ctx.globalAlpha=1; }
 }
 function render(dt){
   ctx.setTransform(DPR,0,0,DPR,0,0);
