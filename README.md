@@ -1,5 +1,6 @@
 # Ship It! Indie Hacker Rush
 
+[![Release](https://img.shields.io/github/v/release/eddiejaoude/ship-it-game)](https://github.com/eddiejaoude/ship-it-game/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
