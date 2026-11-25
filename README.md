@@ -46,8 +46,9 @@ The demo has 2 levels plus the boss. If you die during the boss fight you can re
 
 Open `index.html` and look near the top of the script:
 
-- `CONFIG.repoUrl` shows a "Star on GitHub" button on the win screen when set
+- `CONFIG.repoUrl` shows a "Star on GitHub" link in the bottom-right corner and on the win screen when set
 - `CONFIG.shareUrl` is the URL used in the "Ask for more levels" share post
+- `CONFIG.creator` sets the "Made by" credit and social links in the bottom-left corner (`github`, `substack`, `x`, `linkedin`, `youtube`). Set it to `null` to hide it
 - `FEATURES`, `IDEAS`, `BOSS_LINES`, `BG_TXT` hold all the jokes. PRs with better ones welcome
 - `LEVELS` and `buildLevel()` define level length, speed and enemy patterns
 - `UPGRADES` defines the level-up cards
