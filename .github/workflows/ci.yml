@@ -50,11 +50,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # The game is a single self-contained file: publish only that.
+      # The game is a single self-contained file. Publish it plus the link-preview image only.
       - name: Build site
         run: |
-          mkdir _site
+          mkdir -p _site/assets
           cp index.html _site/
+          cp assets/og-image.jpg _site/assets/
 
       - uses: actions/upload-pages-artifact@v5
         with:
