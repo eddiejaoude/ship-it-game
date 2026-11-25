@@ -1,0 +1,29 @@
+name: Idea (level, enemy, joke, upgrade)
+description: Suggest something new for the game
+labels: ["idea"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type of idea
+      options:
+        - New level
+        - New enemy or boss
+        - New joke / text
+        - New upgrade card
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Describe your idea
+      description: How would it work and why would it be fun?
+    validations:
+      required: true
+  - type: checkboxes
+    id: pr
+    attributes:
+      label: Contribution
+      options:
+        - label: I'd like to build this myself
