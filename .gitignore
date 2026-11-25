@@ -2,3 +2,7 @@
 node_modules/
 .vscode/
 .idea/
+
+# Raw screen recordings (convert to assets/*.gif instead)
+*.mov
+*.mp4

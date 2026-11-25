@@ -9,6 +9,10 @@ An arcade lane runner set inside a code editor, built around life as an indie ha
 
 **▶ [Play it in your browser](https://eddiejaoude.github.io/ship-it-game/)**
 
+<p align="center">
+  <img src="assets/demo.gif" alt="Gameplay: a team of AI agents runs down a code-editor lane, picking +agent terminals and shooting bug swarms" width="400">
+</p>
+
 ## Play
 
 Play online at **https://eddiejaoude.github.io/ship-it-game/**, or clone the repo and open `index.html` in any modern browser. That's it.
